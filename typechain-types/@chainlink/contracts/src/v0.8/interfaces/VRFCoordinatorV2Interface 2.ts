@@ -3,16 +3,11 @@
 /* eslint-disable */
 import type {
   BaseContract,
-  PopulatedTransaction,
-  Signer,
-  utils,
-} from "ethers";
-import type { FunctionFragment, Result } from "@ethersproject/abi";
-import type { Listener, Provider } from "@ethersproject/providers";
-import type {
-  TypedEventFilter,
-  TypedEvent,
-  TypedListener,
+  BigNumber,
+  BigNumberish,
+  BytesLike,
+  CallOverrides,
+  ContractTransaction,
   OnEvent,
 } from "../../../../../common";
 
