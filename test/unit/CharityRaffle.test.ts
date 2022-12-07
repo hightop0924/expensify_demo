@@ -13,22 +13,6 @@ import { CharityRaffle, VRFCoordinatorV2Mock } from "../../typechain-types"
         let charityRaffleContract: CharityRaffle
         let vrfCoordinatorV2Mock: VRFCoordinatorV2Mock
         let raffleEntranceFee: BigNumber
-        let duration: number
-        let jackpot: string
-        let deployer: SignerWithAddress
-        let player1: SignerWithAddress
-        let player2: SignerWithAddress
-        let charity1: SignerWithAddress
-        let charity2: SignerWithAddress
-        let charity3: SignerWithAddress
-        let fundingWallet: string
-        let accounts: SignerWithAddress[]
-
-        beforeEach(async () => {
-            accounts = await ethers.getSigners()
-            deployer = accounts[0]
-            player1 = accounts[1]
-            player2 = accounts[2]
             charity1 = accounts[3]
             charity2 = accounts[4]
             charity3 = accounts[5]

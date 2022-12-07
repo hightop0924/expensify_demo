@@ -8,16 +8,11 @@ import type {
   VRFCoordinatorV2Interface,
   VRFCoordinatorV2InterfaceInterface,
 } from "../../../../../../@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface";
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
+
+const _abi = [
   {
     inputs: [
       {
-        internalType: "uint64",
-        name: "subId",
-        type: "uint64",
       },
       {
         internalType: "address",

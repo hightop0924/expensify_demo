@@ -8,6 +8,17 @@ import type {
   KeeperCompatibleInterface,
   KeeperCompatibleInterfaceInterface,
 } from "../../../../../../@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface";
+
+const _abi = [
+  {
+    inputs: [
+      {
+        internalType: "bytes",
+        name: "checkData",
+        type: "bytes",
+      },
+    ],
+    name: "checkUpkeep",
     outputs: [
       {
         internalType: "bool",

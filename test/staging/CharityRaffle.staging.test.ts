@@ -8,6 +8,17 @@ import { CharityRaffle } from "../../typechain-types"
 developmentChains.includes(network.name)
 ? describe.skip
 : describe("CharityRaffle Staging Tests", function () {
+        let charityRaffle: CharityRaffle
+        let raffleEntranceFee: BigNumber
+        let jackpot: BigNumber
+        let deployer: string
+        let duration: number
+        let charity1: string
+
+        beforeEach(async function () {
+            deployer = (await getNamedAccounts()).deployer
+            charityRaffle = await ethers.getContract("CharityRaffle", deployer)
+            raffleEntranceFee = await charityRaffle.getEntranceFee()
             jackpot = await charityRaffle.getJackpot()
             duration = (await charityRaffle.getDuration()).toNumber()
             const charities = await charityRaffle.getCharities()
