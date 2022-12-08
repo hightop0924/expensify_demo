@@ -13,6 +13,22 @@ import type { Provider, TransactionRequest } from "@ethersproject/providers";
 import type {
   VRFCoordinatorV2Mock,
   VRFCoordinatorV2MockInterface,
+} from "../../../../../../@chainlink/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock";
+
+const _abi = [
+  {
+    inputs: [
+      {
+        internalType: "uint96",
+        name: "_baseFee",
+        type: "uint96",
+      },
+      {
+        internalType: "uint96",
+        name: "_gasPriceLink",
+        type: "uint96",
+      },
+    ],
     stateMutability: "nonpayable",
     type: "constructor",
   },

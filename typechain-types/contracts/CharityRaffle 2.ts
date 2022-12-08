@@ -13,6 +13,22 @@ import type {
   PopulatedTransaction,
   Signer,
   utils,
+} from "ethers";
+import type {
+  FunctionFragment,
+  Result,
+  EventFragment,
+} from "@ethersproject/abi";
+import type { Listener, Provider } from "@ethersproject/providers";
+import type {
+  TypedEventFilter,
+  TypedEvent,
+  TypedListener,
+  OnEvent,
+} from "../common";
+
+export interface CharityRaffleInterface extends utils.Interface {
+  functions: {
     "DonationMatch()": FunctionFragment;
     "checkUpkeep(bytes)": FunctionFragment;
     "enterRaffle(uint256)": FunctionFragment;
