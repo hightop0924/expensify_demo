@@ -23,32 +23,6 @@ import type { Listener, Provider } from "@ethersproject/providers";
 import type {
   TypedEventFilter,
   TypedEvent,
-  TypedListener,
-  OnEvent,
-} from "../common";
-
-export interface CharityRaffleInterface extends utils.Interface {
-  functions: {
-    "DonationMatch()": FunctionFragment;
-    "checkUpkeep(bytes)": FunctionFragment;
-    "enterRaffle(uint256)": FunctionFragment;
-    "fundDonationMatch()": FunctionFragment;
-    "getAllPlayers()": FunctionFragment;
-    "getCharities()": FunctionFragment;
-    "getCharityWinner()": FunctionFragment;
-    "getDonations(address)": FunctionFragment;
-    "getDuration()": FunctionFragment;
-    "getEntranceFee()": FunctionFragment;
-    "getFundingWallet()": FunctionFragment;
-    "getHighestDonations()": FunctionFragment;
-    "getJackpot()": FunctionFragment;
-    "getNumWords()": FunctionFragment;
-    "getNumberOfPlayers()": FunctionFragment;
-    "getPlayer(uint256)": FunctionFragment;
-    "getRaffleState()": FunctionFragment;
-    "getRecentWinner()": FunctionFragment;
-    "getRequestConfirmations()": FunctionFragment;
-    "getStartTime()": FunctionFragment;
     "performUpkeep(bytes)": FunctionFragment;
     "rawFulfillRandomWords(uint256,uint256[])": FunctionFragment;
   };

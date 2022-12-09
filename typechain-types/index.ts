@@ -18,3 +18,5 @@ export type { VRFConsumerBaseV2 } from "./@chainlink/contracts/src/v0.8/VRFConsu
 export { VRFConsumerBaseV2__factory } from "./factories/@chainlink/contracts/src/v0.8/VRFConsumerBaseV2__factory";
 export type { CharityRaffle } from "./contracts/CharityRaffle";
 export { CharityRaffle__factory } from "./factories/contracts/CharityRaffle__factory";
+export type { Raffle } from "./contracts/Raffle";
+export { Raffle__factory } from "./factories/contracts/Raffle__factory";

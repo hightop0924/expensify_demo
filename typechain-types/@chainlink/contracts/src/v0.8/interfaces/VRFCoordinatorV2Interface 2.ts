@@ -23,32 +23,6 @@ import type {
 } from "../../../../../common";
 
 export interface VRFCoordinatorV2InterfaceInterface extends utils.Interface {
-  functions: {
-    "acceptSubscriptionOwnerTransfer(uint64)": FunctionFragment;
-    "addConsumer(uint64,address)": FunctionFragment;
-    "cancelSubscription(uint64,address)": FunctionFragment;
-    "createSubscription()": FunctionFragment;
-    "getRequestConfig()": FunctionFragment;
-    "getSubscription(uint64)": FunctionFragment;
-    "removeConsumer(uint64,address)": FunctionFragment;
-    "requestRandomWords(bytes32,uint64,uint16,uint32,uint32)": FunctionFragment;
-    "requestSubscriptionOwnerTransfer(uint64,address)": FunctionFragment;
-  };
-
-  getFunction(
-    nameOrSignatureOrTopic:
-      | "acceptSubscriptionOwnerTransfer"
-      | "addConsumer"
-      | "cancelSubscription"
-      | "createSubscription"
-      | "getRequestConfig"
-      | "getSubscription"
-      | "removeConsumer"
-      | "requestRandomWords"
-      | "requestSubscriptionOwnerTransfer"
-  ): FunctionFragment;
-
-  encodeFunctionData(
     functionFragment: "acceptSubscriptionOwnerTransfer",
     values: [BigNumberish]
   ): string;

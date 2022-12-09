@@ -18,6 +18,27 @@ import type { Listener, Provider } from "@ethersproject/providers";
 import type {
   TypedEventFilter,
   TypedEvent,
+  TypedListener,
+  OnEvent,
+} from "../../../../../common";
+
+export interface LinkTokenInterfaceInterface extends utils.Interface {
+  functions: {
+    "allowance(address,address)": FunctionFragment;
+    "approve(address,uint256)": FunctionFragment;
+    "balanceOf(address)": FunctionFragment;
+    "decimals()": FunctionFragment;
+    "decreaseApproval(address,uint256)": FunctionFragment;
+    "increaseApproval(address,uint256)": FunctionFragment;
+    "name()": FunctionFragment;
+    "symbol()": FunctionFragment;
+    "totalSupply()": FunctionFragment;
+    "transfer(address,uint256)": FunctionFragment;
+    "transferAndCall(address,uint256,bytes)": FunctionFragment;
+    "transferFrom(address,address,uint256)": FunctionFragment;
+  };
+
+  getFunction(
     nameOrSignatureOrTopic:
       | "allowance"
       | "approve"

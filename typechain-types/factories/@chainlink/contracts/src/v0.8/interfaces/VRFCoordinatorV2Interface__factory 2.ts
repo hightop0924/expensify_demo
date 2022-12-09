@@ -23,32 +23,6 @@ const _abi = [
     stateMutability: "nonpayable",
     type: "function",
   },
-  {
-    inputs: [
-      {
-        internalType: "uint64",
-        name: "subId",
-        type: "uint64",
-      },
-      {
-        internalType: "address",
-        name: "consumer",
-        type: "address",
-      },
-    ],
-    name: "addConsumer",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint64",
-        name: "subId",
-        type: "uint64",
-      },
-      {
         internalType: "address",
         name: "to",
         type: "address",
