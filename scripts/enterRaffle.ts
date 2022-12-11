@@ -1,4 +1,3 @@
-// @ts-ignore
 import { ethers } from "hardhat"
 import { Raffle } from '../typechain-types'
 
