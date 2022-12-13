@@ -3,6 +3,12 @@
 /* eslint-disable */
 import {
   Signer,
+  utils,
+  Contract,
+  ContractFactory,
+  BigNumberish,
+  Overrides,
+} from "ethers";
 import type { Provider, TransactionRequest } from "@ethersproject/providers";
 import type {
   VRFCoordinatorV2Mock,

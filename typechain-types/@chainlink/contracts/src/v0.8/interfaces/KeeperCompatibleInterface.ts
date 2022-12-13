@@ -8,17 +8,6 @@ import type {
   CallOverrides,
   ContractTransaction,
   Overrides,
-  PopulatedTransaction,
-  Signer,
-  utils,
-} from "ethers";
-import type { FunctionFragment, Result } from "@ethersproject/abi";
-import type { Listener, Provider } from "@ethersproject/providers";
-import type {
-  TypedEventFilter,
-  TypedEvent,
-  TypedListener,
-  OnEvent,
 } from "../../../../../common";
 
 export interface KeeperCompatibleInterfaceInterface extends utils.Interface {

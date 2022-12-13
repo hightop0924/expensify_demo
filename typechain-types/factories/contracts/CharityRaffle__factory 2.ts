@@ -3,16 +3,11 @@
 /* eslint-disable */
 import {
   Signer,
-} from "ethers";
-import type { Provider, TransactionRequest } from "@ethersproject/providers";
-import type {
-  CharityRaffle,
-  CharityRaffleInterface,
-} from "../../contracts/CharityRaffle";
-
-const _abi = [
-  {
-    inputs: [
+  utils,
+  Contract,
+  ContractFactory,
+  PayableOverrides,
+  BytesLike,
       {
         internalType: "address",
         name: "vrfCoordinatorV2",

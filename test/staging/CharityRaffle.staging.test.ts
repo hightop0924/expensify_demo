@@ -3,16 +3,11 @@ import { assert, expect } from "chai"
 import { getNamedAccounts, ethers, network } from "hardhat"
 import { developmentChains } from "../../helper-hardhat-config"
 import { BigNumber } from "ethers"
-        let raffleEntranceFee: BigNumber
-        let jackpot: BigNumber
-        let deployer: string
-        let duration: number
-        let charity1: string
+import { CharityRaffle } from "../../typechain-types"
 
-        beforeEach(async function () {
-            deployer = (await getNamedAccounts()).deployer
-            charityRaffle = await ethers.getContract("CharityRaffle", deployer)
-            raffleEntranceFee = await charityRaffle.getEntranceFee()
+developmentChains.includes(network.name)
+? describe.skip
+: describe("CharityRaffle Staging Tests", function () {
             jackpot = await charityRaffle.getJackpot()
             duration = (await charityRaffle.getDuration()).toNumber()
             const charities = await charityRaffle.getCharities()

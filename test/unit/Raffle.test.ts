@@ -8,17 +8,6 @@ import { Raffle, VRFCoordinatorV2Mock } from "../../typechain-types"
 
 !developmentChains.includes(network.name)
 ? describe.skip
-: describe("Raffle Unit Tests", function () {
-        let raffle: Raffle
-        let raffleContract: Raffle
-        let vrfCoordinatorV2Mock: VRFCoordinatorV2Mock
-        let raffleEntranceFee: BigNumber
-        let interval: number
-        let player: SignerWithAddress
-        let accounts: SignerWithAddress[]
-
-        beforeEach(async () => {
-            accounts = await ethers.getSigners() // could also do with getNamedAccounts
             //   deployer = accounts[0]
             player = accounts[1]
             await deployments.fixture(["mocks", "raffle"])
