@@ -8,36 +8,21 @@ import {
   ContractFactory,
   PayableOverrides,
   BytesLike,
+  BigNumberish,
+} from "ethers";
+import type { Provider, TransactionRequest } from "@ethersproject/providers";
+import type {
+  CharityRaffle,
+  CharityRaffleInterface,
+} from "../../contracts/CharityRaffle";
+
+const _abi = [
+  {
+    inputs: [
       {
         internalType: "address",
         name: "vrfCoordinatorV2",
         type: "address",
-      },
-      {
-        internalType: "uint64",
-        name: "subscriptionId",
-        type: "uint64",
-      },
-      {
-        internalType: "bytes32",
-        name: "gasLane",
-        type: "bytes32",
-      },
-      {
-        internalType: "uint256",
-        name: "entranceFee",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "jackpot",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "duration",
-        type: "uint256",
-      },
       {
         internalType: "uint32",
         name: "callbackGasLimit",

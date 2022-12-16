@@ -8,36 +8,21 @@ import { CharityRaffle } from "../../typechain-types"
 developmentChains.includes(network.name)
 ? describe.skip
 : describe("CharityRaffle Staging Tests", function () {
+        let charityRaffle: CharityRaffle
+        let raffleEntranceFee: BigNumber
+        let jackpot: BigNumber
+        let deployer: string
+        let duration: number
+        let charity1: string
+
+        beforeEach(async function () {
+            deployer = (await getNamedAccounts()).deployer
+            charityRaffle = await ethers.getContract("CharityRaffle", deployer)
+            raffleEntranceFee = await charityRaffle.getEntranceFee()
             jackpot = await charityRaffle.getJackpot()
             duration = (await charityRaffle.getDuration()).toNumber()
             const charities = await charityRaffle.getCharities()
             charity1 = charities[0]
-        })
-
-        describe("CharityRaffle fulfillRandomWords", function () {
-            it("works with live Chainlink Keepers and Chainlink VRF, we get a random winner", async function () {
-                // enter the raffle
-                console.log("Setting up test...")
-                const startingTimeStamp = await charityRaffle.getStartTime()
-                const accounts = await ethers.getSigners()
-
-                console.log("Setting up Player Winner Listener...")
-                await new Promise<void>(async (resolve, reject) => {
-                    // setup listener before we enter the raffle
-                    // Just in case the blockchain moves REALLY fast
-                    charityRaffle.once("WinnerPicked", async () => {
-                        console.log("WinnerPicked event fired!")
-                        try {
-                            // add our asserts here
-                            const recentWinner = await charityRaffle.getRecentWinner()
-                            const raffleState = await charityRaffle.getRaffleState()
-                            const winnerEndingBalance = await accounts[0].getBalance()
-                            const blockNum = await ethers.provider.getBlockNumber()
-                            const endingBlock = await ethers.provider.getBlock(blockNum)
-                            const endingTimestamp = endingBlock.timestamp
-                            expect(endingTimestamp).to.be.greaterThan(
-                                startingTimeStamp.add(duration).toNumber()
-                            )
 
                             await expect(charityRaffle.getPlayer(0)).to.be.reverted
                             assert.equal(recentWinner.toString(), accounts[0].address)
