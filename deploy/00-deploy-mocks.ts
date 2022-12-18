@@ -1,4 +1,3 @@
-import { DeployFunction } from "hardhat-deploy/types"
 import { HardhatRuntimeEnvironment } from "hardhat/types"
 
 const BASE_FEE = "250000000000000000" // 0.25 is this the premium in LINK?

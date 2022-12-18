@@ -1,4 +1,3 @@
-// @ts-ignore
 import { ethers, network } from "hardhat"
 import { CharityRaffle } from "../../typechain-types"
 import { BigNumber } from "ethers"

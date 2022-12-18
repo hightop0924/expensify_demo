@@ -1,4 +1,3 @@
-import { frontEndContractsFile } from "../helper-hardhat-config"
 import fs from "fs"
 import { DeployFunction } from "hardhat-deploy/types"
 import { HardhatRuntimeEnvironment } from "hardhat/types"
@@ -23,3 +22,4 @@ const updateUI: DeployFunction = async function (hre: HardhatRuntimeEnvironment)
     }
 }
 export default updateUI
+updateUI.tags = ["all", "frontend"]
