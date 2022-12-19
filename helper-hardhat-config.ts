@@ -1,13 +1,8 @@
+// @ts-ignore
 import { ethers } from "hardhat"
 import { BytesLike, BigNumber } from "ethers"
 
 export interface networkConfigItem {
-    name: string
-    subscriptionId: BigNumber
-    gasLane: BytesLike
-    keepersUpdateInterval: BigNumber
-    charityRaffleDuration: BigNumber
-    raffleEntranceFee: BigNumber
     jackpot: BigNumber
     callbackGasLimit: BigNumber
     vrfCoordinatorV2: string
