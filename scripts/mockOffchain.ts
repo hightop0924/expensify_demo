@@ -8,17 +8,6 @@ async function mockKeepers() {
     const checkData = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(""))
     const { upkeepNeeded } = await raffle.callStatic.checkUpkeep(checkData)
     if (upkeepNeeded) {
-        const tx = await raffle.performUpkeep(checkData)
-        const txReceipt = await tx.wait(1)
-        const requestId: BigNumber = txReceipt.events[1].args.requestId
-        console.log(`Performed upkeep with RequestId: ${requestId}`)
-        if (network.config.chainId == 31337) {
-            await mockVrf(requestId, raffle)
-        }
-    } else {
-        console.log("No upkeep needed!")
-    }
-}
 
 async function mockVrf(requestId: BigNumber, raffle: Raffle) {
     console.log("We on a local network? Ok let's pretend...")
