@@ -8,6 +8,17 @@ import {
   ContractFactory,
   PayableOverrides,
   BytesLike,
+  BigNumberish,
+} from "ethers";
+import type { Provider, TransactionRequest } from "@ethersproject/providers";
+import type {
+  CharityRaffle,
+  CharityRaffleInterface,
+} from "../../contracts/CharityRaffle";
+
+const _abi = [
+  {
+    inputs: [
       {
         internalType: "address",
         name: "vrfCoordinatorV2",

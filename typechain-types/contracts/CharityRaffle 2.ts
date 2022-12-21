@@ -8,16 +8,11 @@ import type {
   BytesLike,
   CallOverrides,
   ContractTransaction,
-import type { Listener, Provider } from "@ethersproject/providers";
-import type {
-  TypedEventFilter,
-  TypedEvent,
-  TypedListener,
-  OnEvent,
-} from "../common";
-
-export interface CharityRaffleInterface extends utils.Interface {
-  functions: {
+  Overrides,
+  PayableOverrides,
+  PopulatedTransaction,
+  Signer,
+  utils,
     "DonationMatch()": FunctionFragment;
     "checkUpkeep(bytes)": FunctionFragment;
     "enterRaffle(uint256)": FunctionFragment;

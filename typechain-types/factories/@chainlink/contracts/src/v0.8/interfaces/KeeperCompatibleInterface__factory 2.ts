@@ -13,22 +13,6 @@ const _abi = [
   {
     inputs: [
       {
-        internalType: "bytes",
-        name: "checkData",
-        type: "bytes",
-      },
-    ],
-    name: "checkUpkeep",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "upkeepNeeded",
-        type: "bool",
-      },
-      {
-        internalType: "bytes",
-        name: "performData",
-        type: "bytes",
       },
     ],
     stateMutability: "nonpayable",
