@@ -13,3 +13,7 @@ const verify = async (contractAddress: string, args: any[]) => {
     } else {
       console.log(e)
     }
+  }
+}
+
+export default verify

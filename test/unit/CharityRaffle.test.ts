@@ -13,16 +13,11 @@ import { CharityRaffle, VRFCoordinatorV2Mock } from "../../typechain-types"
         let charityRaffleContract: CharityRaffle
         let vrfCoordinatorV2Mock: VRFCoordinatorV2Mock
         let raffleEntranceFee: BigNumber
-            charity1 = accounts[3]
-            charity2 = accounts[4]
-            charity3 = accounts[5]
-            await deployments.fixture(["mocks", "charity-raffle"])
-            vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock")
-            charityRaffleContract = await ethers.getContract("CharityRaffle")
-            charityRaffle = charityRaffleContract.connect(deployer)
-            raffleEntranceFee = await charityRaffle.getEntranceFee()
-            duration = (await charityRaffle.getDuration()).toNumber()
-            jackpot = (await charityRaffle.getJackpot()).toString()
+        let duration: number
+        let jackpot: string
+        let deployer: SignerWithAddress
+        let player1: SignerWithAddress
+        let player2: SignerWithAddress
             fundingWallet = await charityRaffle.getFundingWallet()
         })
 

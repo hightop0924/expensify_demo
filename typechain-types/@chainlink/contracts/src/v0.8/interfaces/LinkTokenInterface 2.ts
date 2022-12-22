@@ -13,16 +13,11 @@ import type {
   Signer,
   utils,
 } from "ethers";
-    "increaseApproval(address,uint256)": FunctionFragment;
-    "name()": FunctionFragment;
-    "symbol()": FunctionFragment;
-    "totalSupply()": FunctionFragment;
-    "transfer(address,uint256)": FunctionFragment;
-    "transferAndCall(address,uint256,bytes)": FunctionFragment;
-    "transferFrom(address,address,uint256)": FunctionFragment;
-  };
-
-  getFunction(
+import type { FunctionFragment, Result } from "@ethersproject/abi";
+import type { Listener, Provider } from "@ethersproject/providers";
+import type {
+  TypedEventFilter,
+  TypedEvent,
     nameOrSignatureOrTopic:
       | "allowance"
       | "approve"

@@ -13,6 +13,22 @@ import type {
   PopulatedTransaction,
   Signer,
   utils,
+} from "ethers";
+import type {
+  FunctionFragment,
+  Result,
+  EventFragment,
+} from "@ethersproject/abi";
+import type { Listener, Provider } from "@ethersproject/providers";
+import type {
+  TypedEventFilter,
+  TypedEvent,
+  TypedListener,
+  OnEvent,
+} from "../common";
+
+export interface RaffleInterface extends utils.Interface {
+  functions: {
     "checkUpkeep(bytes)": FunctionFragment;
     "enterRaffle()": FunctionFragment;
     "getEntranceFee()": FunctionFragment;
