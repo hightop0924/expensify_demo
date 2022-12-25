@@ -1,4 +1,3 @@
-import { DeployFunction } from "hardhat-deploy/types"
 import { HardhatRuntimeEnvironment } from "hardhat/types"
 
 const BASE_FEE = "250000000000000000" // 0.25 is this the premium in LINK?
@@ -18,3 +17,15 @@ const deployMocks: DeployFunction = async function (hre: HardhatRuntimeEnvironme
             args: [BASE_FEE, GAS_PRICE_LINK],
         })
 
+        log("Mocks Deployed!")
+        log("----------------------------------")
+
+        log("You are deploying to a local network, you'll need a local network running to interact")
+        log(
+            "Please run `yarn hardhat console --network localhost` to interact with the deployed smart contracts!"
+        )
+        log("----------------------------------")
+    }
+}
+export default deployMocks
+deployMocks.tags = ["all", "mocks"]

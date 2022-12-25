@@ -1,4 +1,3 @@
-import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
 import { assert, expect } from "chai"
 import { BigNumber } from "ethers"
 // @ts-ignore
@@ -18,6 +17,27 @@ import { CharityRaffle, VRFCoordinatorV2Mock } from "../../typechain-types"
         let deployer: SignerWithAddress
         let player1: SignerWithAddress
         let player2: SignerWithAddress
+        let charity1: SignerWithAddress
+        let charity2: SignerWithAddress
+        let charity3: SignerWithAddress
+        let fundingWallet: string
+        let accounts: SignerWithAddress[]
+
+        beforeEach(async () => {
+            accounts = await ethers.getSigners()
+            deployer = accounts[0]
+            player1 = accounts[1]
+            player2 = accounts[2]
+            charity1 = accounts[3]
+            charity2 = accounts[4]
+            charity3 = accounts[5]
+            await deployments.fixture(["mocks", "charity-raffle"])
+            vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock")
+            charityRaffleContract = await ethers.getContract("CharityRaffle")
+            charityRaffle = charityRaffleContract.connect(deployer)
+            raffleEntranceFee = await charityRaffle.getEntranceFee()
+            duration = (await charityRaffle.getDuration()).toNumber()
+            jackpot = (await charityRaffle.getJackpot()).toString()
             fundingWallet = await charityRaffle.getFundingWallet()
         })
 
