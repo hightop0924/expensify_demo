@@ -1,13 +1,8 @@
+import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
 import { assert, expect } from "chai"
 import { BigNumber } from "ethers"
 // @ts-ignore
 import { network, deployments, ethers } from "hardhat"
-import { developmentChains, networkConfig } from "../../helper-hardhat-config"
-import { CharityRaffle, VRFCoordinatorV2Mock } from "../../typechain-types"
-
-!developmentChains.includes(network.name)
-? describe.skip
-: describe("CharityRaffle Unit Tests", function () {
         let charityRaffle: CharityRaffle
         let charityRaffleContract: CharityRaffle
         let vrfCoordinatorV2Mock: VRFCoordinatorV2Mock
