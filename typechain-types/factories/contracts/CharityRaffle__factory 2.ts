@@ -3,6 +3,12 @@
 /* eslint-disable */
 import {
   Signer,
+  utils,
+  Contract,
+  ContractFactory,
+  PayableOverrides,
+  BytesLike,
+  BigNumberish,
 } from "ethers";
 import type { Provider, TransactionRequest } from "@ethersproject/providers";
 import type {

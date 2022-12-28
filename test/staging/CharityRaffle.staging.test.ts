@@ -3,6 +3,12 @@ import { assert, expect } from "chai"
 import { getNamedAccounts, ethers, network } from "hardhat"
 import { developmentChains } from "../../helper-hardhat-config"
 import { BigNumber } from "ethers"
+import { CharityRaffle } from "../../typechain-types"
+
+developmentChains.includes(network.name)
+? describe.skip
+: describe("CharityRaffle Staging Tests", function () {
+        let charityRaffle: CharityRaffle
         let raffleEntranceFee: BigNumber
         let jackpot: BigNumber
         let deployer: string

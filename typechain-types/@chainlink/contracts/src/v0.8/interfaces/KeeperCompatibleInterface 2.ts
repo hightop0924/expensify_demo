@@ -3,6 +3,12 @@
 /* eslint-disable */
 import type {
   BaseContract,
+  BigNumber,
+  BytesLike,
+  CallOverrides,
+  ContractTransaction,
+  Overrides,
+  PopulatedTransaction,
   Signer,
   utils,
 } from "ethers";

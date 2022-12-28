@@ -3,6 +3,12 @@
 /* eslint-disable */
 
 import { Contract, Signer, utils } from "ethers";
+import type { Provider } from "@ethersproject/providers";
+import type {
+  KeeperCompatibleInterface,
+  KeeperCompatibleInterfaceInterface,
+} from "../../../../../../@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface";
+
 const _abi = [
   {
     inputs: [

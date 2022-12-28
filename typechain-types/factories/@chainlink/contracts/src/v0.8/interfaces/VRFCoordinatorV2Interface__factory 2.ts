@@ -3,6 +3,12 @@
 /* eslint-disable */
 
 import { Contract, Signer, utils } from "ethers";
+import type { Provider } from "@ethersproject/providers";
+import type {
+  VRFCoordinatorV2Interface,
+  VRFCoordinatorV2InterfaceInterface,
+} from "../../../../../../@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface";
+
 const _abi = [
   {
     inputs: [
